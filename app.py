@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, redirect, url_for, session, abort
 import psycopg2
 import bcrypt
@@ -358,15 +357,4 @@ def delete_movie(movie_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
-=======
-from flask import Flask
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return "¡Hola, PopcornHour!"
-
-if __name__ == '__main__':
-    app.run(debug=True)
->>>>>>> 4d127c126c8529610fbd91ad04c0e8726556fad2
