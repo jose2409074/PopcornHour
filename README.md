@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PopcornHour: Portal de Películas y Series
 PopcornHour es un portal web interactivo donde los usuarios pueden calificar, comentar y descubrir nuevas películas y series. La plataforma cuenta con dos tipos de usuarios:
 
@@ -24,18 +23,4 @@ Una vez que hayas completado la configuración, puedes iniciar la aplicación.
 python app.py
 
 #### La aplicación estará disponible en tu navegador en la dirección http://127.0.0.1:5000/.
-=======
-# PopcornHour: Portal de películas y series
 
-Este es un portal web para recomendar, calificar y discutir sobre películas y series. El proyecto contempla dos tipos de usuarios: estándar y moderador, con distintas funcionalidades para cada uno.
-
-## Requisitos
-- Python 3.8+
-- Un entorno virtual de Python (recomendado)
-
-## Instalación
-Para instalar las dependencias necesarias, ejecuta el siguiente comando en la terminal desde la carpeta del proyecto:
-
-```bash
-pip install -r requirements.txt
->>>>>>> 4d127c126c8529610fbd91ad04c0e8726556fad2
