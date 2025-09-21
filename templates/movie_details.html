@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex flex-row gap-8">
+    <div class="flex-shrink-0">
+        <img src="{{ pelicula[2] }}" alt="Portada de {{ pelicula[0] }}" class="movie-details-poster rounded-lg shadow-lg">
+    </div>
+
+    <div class="flex-grow">
+        <h2 class="text-4xl font-bold">{{ pelicula[0] }}</h2>
+        <p class="text-sm text-gray-400 mt-2">{{ pelicula[3] }} • {{ pelicula[4] }} min • {{ pelicula[5] }}</p>
+        <p class="text-xl font-bold mt-4">Calificación: {{ "%.2f"|format(promedio_calificacion) if promedio_calificacion is not none else "N/A" }} / 5</p>
+
+        <h3 class="text-2xl font-bold mt-6">Sinopsis</h3>
+        <p class="text-lg mt-2">{{ pelicula[1] }}</p>
+
+        <h3 class="text-2xl font-bold mt-10">Deja tu calificación</h3>
+        <form action="{{ url_for('rate_movie', movie_id=movie_id) }}" method="post" class="mt-4 flex items-center gap-4">
+            <select name="puntuacion" class="input-field w-24">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Calificar</button>
+        </form>
+
+        <h3 class="2xl font-bold mt-10">Comentarios</h3>
+        <div class="mt-4 space-y-4">
+            {% for comentario in comentarios %}
+            <div class="bg-gray-800 p-4 rounded-lg">
+                <p>{{ comentario[0] }}</p>
+            </div>
+            {% else %}
+            <p class="text-gray-400">Aún no hay comentarios. ¡Sé el primero en comentar!</p>
+            {% endfor %}
+        </div>
+
+        <h3 class="text-2xl font-bold mt-10">Escribe un comentario</h3>
+        <form action="{{ url_for('comment_movie', movie_id=movie_id) }}" method="post" class="mt-4">
+            <textarea name="comentario" rows="4" class="input-field w-full" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

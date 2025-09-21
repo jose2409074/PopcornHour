@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="text-center py-20 px-8">
+    <h2 class="text-6xl font-bold leading-tight">¡Bienvenido, {{ session['user_name'] }}!</h2>
+    <p class="text-xl text-gray-400 mt-4">Tu sesión se ha iniciado exitosamente.</p>
+</section>
+
+<section class="py-12">
+    <h2 class="text-3xl font-bold mb-6">Películas en el Catálogo</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {% for pelicula in peliculas %}
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+            <a href="{{ url_for('movie_details', movie_id=pelicula[0]) }}">
+                <div class="movie-poster-container">
+                    <img src="{{ pelicula[3] }}" alt="Portada de {{ pelicula[1] }}">
+                </div>
+            </a>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold">{{ pelicula[1] }}</h3>
+                <p class="text-sm text-gray-400 mt-1">{{ pelicula[2][:100] }}...</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

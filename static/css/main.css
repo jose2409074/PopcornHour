@@ -1,0 +1,159 @@
+/* Utiliza fuente poppins además de las convencionales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Estilo de fondo y fuente para cuerpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0c1d;
+    color: #e0e0e0;
+}
+
+/* Barra de navegación y encabezado */
+header {
+    background-color: #0a0a1a;
+    border-bottom: 2px solid #2d2d4d;
+}
+
+.text-red-500 {
+    color: #ef4444; /* Color rojo de acento */
+}
+
+/* Botones */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #dc2626;
+}
+
+.btn-secondary {
+    border: 2px solid #ef4444;
+    color: #ef4444;
+}
+
+.btn-secondary:hover {
+    background-color: #2d2d4d;
+}
+
+/* Formularios */
+.form-container {
+    background-color: #1a1a2e;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2d2d4d;
+    border: 1px solid #4a4a6e;
+    border-radius: 0.5rem;
+    color: #e0e0e0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.5);
+}
+
+/* Clases de utilidad */
+.text-center { text-align: center; }
+.my-4 { margin-top: 1rem; margin-bottom: 1rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.space-x-4 > * + * { margin-left: 1rem; }
+.mt-8 { margin-top: 2rem; }
+.lg:flex-row { flex-direction: row; }
+.gap-8 { gap: 2rem; }
+.flex-shrink-0 { flex-shrink: 0; }
+.w-96 { width: 24rem; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sm:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.md:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lg:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.gap-6 { gap: 1.5rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.overflow-hidden { overflow: hidden; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.w-full { width: 100%; }
+.h-auto { height: auto; }
+.p-4 { padding: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.font-semibold { font-weight: 600; }
+.text-sm { font-size: 0.875rem; }
+.text-gray-400 { color: #9ca3af; }
+.mt-1 { margin-top: 0.25rem; }
+.text-xl { font-size: 1.25rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-bottom: 1.5rem; }
+
+/* Estilos para iconos */
+.icon-sm {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icon-xs {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* Ajuste para iconos dentro de botones */
+.btn .icon-xs,
+.btn .icon-sm {
+    display: inline-block;
+}
+
+/* Imágenes en el panel de admin */
+.admin-movie-img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.movie-poster-container {
+    height: 350px; /* Puedes ajustar esta altura */
+    overflow: hidden;
+}
+
+.movie-poster-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-details-poster {
+    max-width: 384px; /* Un ancho máximo para que no se vea gigante */
+    height: auto;
+    object-fit: contain;
+}
+

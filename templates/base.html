@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopcornHour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-white font-poppins">
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-red-500">
+            <a href="{{ url_for('index') }}" class="flex items-center space-x-2">
+                <img src="{{ url_for('static', filename='assets/popcornhour.png') }}" class="logo-icon" alt="PopcornHour Logo">
+                <span>PopcornHour</span>
+            </a>
+        </h1>
+        <nav>
+            {% if 'user_id' in session %}
+                {% if session['user_type'] == 'moderador' %}
+                <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary"><img src="{{ url_for('static', filename='assets/admin.png') }}" class="icon-sm" alt="Admin"> Admin</a>
+                {% endif %}
+                <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Dashboard</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-primary"><img src="{{ url_for('static', filename='assets/logout.png') }}" class="icon-sm" alt="Cerrar Sesión"> Cerrar Sesión</a>
+            {% else %}
+            <div class="space-x-4">
+                <a href="{{ url_for('login') }}" class="btn btn-secondary"><img src="{{ url_for('static', filename='assets/login.png') }}" class="icon-sm" alt="Iniciar Sesión"> Iniciar Sesión</a>
+                <a href="{{ url_for('signup') }}" class="btn btn-primary"><img src="{{ url_for('static', filename='assets/signup.png') }}" class="icon-sm" alt="Registrarse"> Registrarse</a>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

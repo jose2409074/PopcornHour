@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="flex justify-center items-center py-12">
+    <div class="form-container w-full max-w-lg">
+        <h2 class="text-3xl font-bold text-center mb-6">Editar Película</h2>
+        <form action="{{ url_for('edit_movie', movie_id=movie_id) }}" method="post">
+            <div class="mb-4">
+                <label for="titulo" class="block text-gray-300 mb-2">Título</label>
+                <input type="text" name="titulo" id="titulo" class="input-field" value="{{ pelicula[0] }}">
+            </div>
+            <div class="mb-4">
+                <label for="sinopsis" class="block text-gray-300 mb-2">Sinopsis</label>
+                <textarea name="sinopsis" id="sinopsis" rows="4" class="input-field">{{ pelicula[1] }}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="ano" class="block text-gray-300 mb-2">Año</label>
+                <input type="text" name="ano" id="ano" class="input-field" value="{{ pelicula[2] }}">
+            </div>
+            <div class="mb-4">
+                <label for="duracion" class="block text-gray-300 mb-2">Duración (min)</label>
+                <input type="text" name="duracion" id="duracion" class="input-field" value="{{ pelicula[3] }}">
+            </div>
+            <div class="mb-4">
+                <label for="genero" class="block text-gray-300 mb-2">Género</label>
+                <input type="text" name="genero" id="genero" class="input-field" value="{{ pelicula[4] }}">
+            </div>
+            <div class="mb-4">
+                <label for="url_portada" class="block text-gray-300 mb-2">URL de la Portada</label>
+                <input type="text" name="url_portada" id="url_portada" class="input-field" value="{{ pelicula[5] }}">
+            </div>
+            <button type="submit" class="w-full btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
